@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{authblk}
+
+%\input{macros}
+%\input{figures/figuremacros.tex}
+\input{defs}
+
+\usepackage{hyperref}
+\usepackage[capitalise, nameinlink]{cleveref}
+
+\begin{document}
+
+\title{Post-quantum OPRFs}
+\author[1]{Sofía Celi}
+\author[1]{Alex Davidson}
+\affil[1]{Brave Software, Inc.}
+
+%\institute{%
+%1
+%Brave Software, Inc. \\
+%\email{\{sceli,alxdavids\}@brave.com}
+%}
+
+\maketitle
+
+\begin{abstract}
+Your abstract.
+\end{abstract}
+
+\input{intro}
+
+\bibliographystyle{alpha}
+\bibliography{cite,cryptobib/abbrev3,cryptobib/crypto}
+
+\end{document}

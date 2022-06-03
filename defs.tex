@@ -1,0 +1,11 @@
+\def\authnotes{1}
+\newcommand{\authnote}[2]{\ifnum\authnotes=1\begin{quote}\textbf{#1 says:} #2\end{quote}\fi}
+\newcommand{\authfnote}[2]{\ifnum\authnotes=1\footnote{\textbf{#1 says:} #2}\fi}
+
+\newcounter{mynote}[section]
+\definecolor{darkcyan}{rgb}{0.0, 0.55, 0.55}
+\definecolor{darkmagenta}{rgb}{0.55, 0.0, 0.55}
+\definecolor{darkpink}{rgb}{0.86,0.44,0.58}
+\newcommand{\notecolor}{blue}
+\newcommand{\nnote}[1]{\ifnum\authnotes=1\refstepcounter{mynote}{\bf \textcolor{darkmagenta}{$\ll$Sofia~\thenote: {\sf #1}$\gg$}}\fi}
+\newcommand{\sofia}[1]{\textcolor{red}{SC: $\langle$#1$\rangle$}}
