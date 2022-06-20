@@ -3,6 +3,16 @@
 
 Lattice-based cryptography uses as a fundamental hardness assumption the fact that it is computationally difficult to find a low-norm vector s satisfying:
 
+A basic construction could be an emulation of the blinding construction $H(x)^{k} = (H(x) ^{r})^{k}) ^ {1/r}$.
+The steps are:
+
+\begin{itemize}
+  \item The server publishes some commitment to a small key $k \in R_q$.
+  \item On client's input $x$, the client picks \emph{invertible} $s \in R_q$, small $e \in R^{1 \times l}_q$ and sends $c_x = a_x \cdot s + e$.
+  \item On server's $k \in R_q$, the server sends $d_x = c_x \cdot k + e^{\prime}$ for small $e^{\prime} \in R^{1 \times l}_q$.
+  \item The client outputs $y = \lceil {p \over q} \cdot d_x \cdot s^{-1} \rceil$
+\end{itemize}
+
 To read:
 
 - Lattice-Based Zero-Knowledge Proofs and Applications: Shorter, Simpler, and More General
