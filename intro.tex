@@ -13,6 +13,17 @@ The steps are:
   \item The client outputs $y = \lceil {p \over q} \cdot d_x \cdot s^{-1} \rceil$
 \end{itemize}
 
+Requirement:
+
+\begin{itemize}
+  \item the set should be large (around $2^{256}$),
+  \item the elements in it should have small norms,
+  \item the non-zero element $s \in R_q$ must be invertible.
+  \item inverted elements should have small coefficients.
+\end{itemize}
+
+All non-zero polynomials with ``small'' coefficients in the cyclotomic ring $Z_p[X]/(\phi_m(X))$ are invertible (where ``small'' depends on the size of $p$ and how many irreducible factors the $m^{th}$ cyclotomic polynomial $\phi_m(X)$ splits into).
+
 To read:
 
 - Lattice-Based Zero-Knowledge Proofs and Applications: Shorter, Simpler, and More General
