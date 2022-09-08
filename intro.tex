@@ -24,10 +24,19 @@ Requirement:
 
 All non-zero polynomials with ``small'' coefficients in the cyclotomic ring $Z_p[X]/(\phi_m(X))$ are invertible (where ``small'' depends on the size of $p$ and how many irreducible factors the $m^{th}$ cyclotomic polynomial $\phi_m(X)$ splits into).
 
+
+\section{Verifiability}
+
+This property can be realized by letting the client obtain a commitment to the PRF key `k`, and requiring the server to provide zero-knowledge proofs of correct evaluation w.r.t. k.
+The commitment should exist in respect to `x` and `s, e` from the client.
+I think it is clear we could use the the ABDLOP Commitment Scheme.
+
+\section{Many}
 To read:
 
 - Lattice-Based Zero-Knowledge Proofs and Applications: Shorter, Simpler, and More General
 - New and Improved Key-Homomorphic Pseudorandom Functions
 - Generating Hard Instances of the Short Basis Problem
 - More Efficient Commitments from Structured Lattice Assumptions
+
 
