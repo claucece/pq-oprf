@@ -19,11 +19,33 @@ Requirement:
   \item the set should be large (around $2^{256}$),
   \item the elements in it should have small norms,
   \item the non-zero element $s \in R_q$ must be invertible.
+  \item the non-zero element $s \in R_q$ must be invertible and all the coefficients of $s^{-1}$ should be small.
   \item inverted elements should have small coefficients.
 \end{itemize}
 
 All non-zero polynomials with ``small'' coefficients in the cyclotomic ring $Z_p[X]/(\phi_m(X))$ are invertible (where ``small'' depends on the size of $p$ and how many irreducible factors the $m^{th}$ cyclotomic polynomial $\phi_m(X)$ splits into).
+However, there is no known way to know way to sample an $s$ that is guaranteeded to have small coefficients.
+Notice that we need this, so:
 
+\begin{equation} \label{eq1}
+\begin{split}
+y &= \lceil {p \over q} \cdot d_x \cdot s^{-1} \rceil\\
+ & = \lceil {p \over q} \cdot ((a_x \cdot s + e) \cdot k + e') \cdot s^{-1}) \rceil \\
+ & = \lceil {p \over q} \cdot ((a_x \cdot s + e) \cdot k + e') \cdot s^{-1}) \rceil \\
+ & = \lceil {p \over q} \cdot ((a_x \cdot k) + {p \over q} \cdot (e \cdot k \cdot s^{-1} + e' \cdot s^{-1})  \rceil \\
+\end{split}
+\end{equation}
+
+Correctness is guaranteed if all the coefficients of ${p \over q} \cdot ((a_x \cdot k)$ are at least:
+
+\begin{equation} \label{eq1}
+| {p \over q} \cdot (e \cdot k \cdot s^{-1} + e' \cdot s^{-1}|_\infty
+\end{equation}
+
+away from $\mathbb{Z} + {1 \over 2}$.
+Unfortunately, this protocol cannot quite be realised using standard RLWE secret distributions, as there is no standard RLWE secret distribution where samples from the distribution are guaranteed to have small inverses in $\mathbf{R}_q$.
+One potential idea, however, is to do it ``the other way around'', and first sample the inverse $s^{-1}$ with small coefficients and an invertible, and set the singular $s$ from there on.
+That way, we guaratee that the inverse is small.
 
 \section{Verifiability}
 
